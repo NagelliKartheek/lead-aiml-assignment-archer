@@ -1,0 +1,3 @@
+NVIDIA announced on August 20 that it expanded support for multimodal AI workflows across its platform.
+Analysts cited strong developer interest and positive sentiment following the update.
+Several enterprise customers requested clearer guidance on operating costs and model governance.

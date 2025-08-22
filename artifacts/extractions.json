@@ -1,0 +1,80 @@
+[
+  {
+    "doc_id": "9a03a40b714902f4",
+    "filename": "doc1.txt",
+    "heuristic": {
+      "entities": [
+        {
+          "type": "ORGANIZATION",
+          "text": "NVIDIA"
+        },
+        {
+          "type": "ORGANIZATION",
+          "text": "AI"
+        },
+        {
+          "type": "DATE",
+          "text": "August"
+        }
+      ],
+      "metrics": [],
+      "sentiment": {
+        "label": "positive",
+        "confidence": 1.0
+      },
+      "issues": [
+        "Several enterprise customers requested clearer guidance on operating costs and model governance."
+      ]
+    }
+  },
+  {
+    "doc_id": "8fdf51ff21d009d9",
+    "filename": "doc2.txt",
+    "heuristic": {
+      "entities": [
+        {
+          "type": "ORGANIZATION",
+          "text": "New York City Transit"
+        },
+        {
+          "type": "ORGANIZATION",
+          "text": "MTA"
+        },
+        {
+          "type": "DATE",
+          "text": "Q2"
+        }
+      ],
+      "metrics": [],
+      "sentiment": {
+        "label": "neutral",
+        "confidence": 0.0
+      },
+      "issues": [
+        "Riders reported better reliability overall, while peak-hour crowding on key lines remained a concern."
+      ]
+    }
+  },
+  {
+    "doc_id": "1ee3d5c89afb51ef",
+    "filename": "doc3.txt",
+    "heuristic": {
+      "entities": [
+        {
+          "type": "ORGANIZATION",
+          "text": "An NIH"
+        },
+        {
+          "type": "DATE",
+          "text": "July"
+        }
+      ],
+      "metrics": [],
+      "sentiment": {
+        "label": "negative",
+        "confidence": 1.0
+      },
+      "issues": []
+    }
+  }
+]
