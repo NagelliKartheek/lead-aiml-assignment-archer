@@ -1,0 +1,5 @@
+# Contributing
+- Keep PRs small and focused; describe scope & risk.
+- Include test coverage notes and any cost implications (BigQuery/Vertex).
+- Before pushing: `make install && make test`.
+- Style: ruff/mypy (see pyproject.toml). CI-friendly.

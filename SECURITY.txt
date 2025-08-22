@@ -1,0 +1,5 @@
+Security Notes
+- Use least-privilege IAM for service accounts.
+- Redact PII in logs and prompts.
+- Prefer customer-managed encryption keys if your org mandates CMEK.
+- Apply request timeouts and token limits on model calls to control cost and blast radius.

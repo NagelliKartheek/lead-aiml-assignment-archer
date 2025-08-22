@@ -1,0 +1,12 @@
+[tool.ruff]
+line-length = 100
+extend-select = ["E","F","I","UP","N","B"]
+target-version = "py311"
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.11"
+warn_unused_configs = true
+ignore_missing_imports = true

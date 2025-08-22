@@ -1,0 +1,42 @@
+# Global configuration
+project_id: YOUR_GCP_PROJECT_ID
+location: us-central1
+
+# Cloud Storage
+gcs_bucket: archer-nlp-demo-bucket
+gcs_prefix: corpora/news-v1
+
+# BigQuery
+bq_dataset: nlp_demo
+bq_table_corpus: documents
+bq_table_ie: extracted_entities
+bq_table_summaries: summaries
+
+# Vertex AI / APIs
+vertex_location: us-central1
+vertex_model_summary: "gemini-1.5-flash"
+vertex_model_extraction: "gemini-1.5-pro"
+use_nl_api: true
+use_vertex_for_summarization: true
+
+# Execution switches
+local_mode: true
+data_source: local
+
+# When data_source = bq_public (requires local_mode: false)
+bq_public_query: |
+  -- BBC News fulltext from BigQuery Public Datasets
+  WITH base AS (
+    SELECT
+      ANY_VALUE(title) AS title,
+      content          AS content
+    FROM `bigquery-public-data.bbc_news.fulltext`
+    WHERE content IS NOT NULL
+    GROUP BY content
+  )
+  SELECT
+    TO_HEX(MD5(content))                         AS doc_id,
+    CONCAT('bbc_', TO_HEX(MD5(content)), '.txt') AS filename,
+    CONCAT(IFNULL(title, ''), '\n\n', content) AS text
+  FROM base
+  LIMIT 500

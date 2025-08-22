@@ -1,0 +1,18 @@
+Data Provenance
+
+This repository supports two dataset modes:
+
+1) local
+   Small text files under data/sample_docs used for quick iteration in local mode.
+
+2) bq_public (requires local_mode: false)
+   Source: BigQuery Public Dataset — bigquery-public-data.bbc_news.fulltext
+   Query (config.yaml -> bq_public_query) selects recent BBC News articles with non-null content.
+   Fields used: content (as body), title; doc_id generated as MD5(content).
+
+How to switch to the public dataset
+- In config.yaml set local_mode: false and data_source: bq_public
+- Ensure BigQuery access and billing
+- Run: python src/ingest.py
+
+Prepared: 2025-08-22
